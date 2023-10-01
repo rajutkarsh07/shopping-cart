@@ -25,7 +25,10 @@ const Context = ({ children }) => {
 };
 
 export const CartState = () => {
-  return useContext(Cart);
+  
+  const Context = useContext(Cart);
+  if(!Context) throw new Error ("API context must be wrapped within API Context Provider ")
+  return Context;
 };
 
 export default Context;
